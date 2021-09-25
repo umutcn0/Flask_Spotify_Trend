@@ -29,95 +29,64 @@ def top_10(sanatcı):
         dict["prewiev_url"] = results["tracks"][i]["preview_url"]
         liste_10.append(dict)
 
-    with open('top10.json', 'w') as json_dosya:
-        json.dump(liste_10, json_dosya)
+    return liste_10
 
 @app.route("/tracks/rock")
 def rock():
     sec_sanatcı = random.choice(genres["rock"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 @app.route("/tracks/alternative rock")
 def alternative_rock():
     sec_sanatcı = random.choice(genres["alternative rock"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 
 @app.route("/tracks/pop")
 def pop():
     sec_sanatcı = random.choice(genres["pop"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 
 @app.route("/tracks/blues")
 def blues():
     sec_sanatcı = random.choice(genres["blues"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 
 @app.route("/tracks/country")
 def country():
     sec_sanatcı = random.choice(genres["country"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 
 @app.route("/tracks/electronic")
 def electronic():
     sec_sanatcı = random.choice(genres["electronic"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 
 @app.route("/tracks/jazz")
 def jazz():
     sec_sanatcı = random.choice(genres["jazz"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 
 @app.route("/tracks/r&b")
 def rb():
     sec_sanatcı = random.choice(genres["r&b"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 
 @app.route("/tracks/rap")
 def rap():
     sec_sanatcı = random.choice(genres["rap"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 @app.route("/tracks/reggae")
 def reggae():
     sec_sanatcı = random.choice(genres["reggae"])
-    top_10(sec_sanatcı)
-    with open("top10.json") as js:
-        top10 = json.load(js)
-    return render_template("genre.html", variable=top10)
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
 
 @app.route('/tracks', methods=['GET', 'POST'])
 def server():
