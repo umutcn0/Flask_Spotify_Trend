@@ -39,34 +39,35 @@
       }
       input,
       button {
+        
         position: sticky;
         text-align: center;
         margin: 0 auto;
         padding: 5px;
         border: 2px solid black;
-        left: 50%;
+        
       }
     </style>
   </head>
-  <body>
-    <div class="container">
+  <body class="container">
+
         <div class="center">
         <h1>Enter Your Genre</h1>
 
         
-        <form>
-          <input
+        <form >
+          <input style= "width: 250px"
             name="message"
             type="text"
-            maxlength="512"
+            maxlength="16"
             id="searchTxt"
             class="messageBox"
             placeholder="Type"
           />
         </form></br>
-        <button id="myButton" class="float-left submit-button">Search</button>
+        <button  id="myButton" class="float-left submit-button" style= "transform: translate(35%, 0%); width: 150px; ">Search</button>
       </div>
-    </div>
+
     <script type="text/javascript">
       var input = document.getElementById("searchTxt");
 
