@@ -31,68 +31,16 @@ def top_10(sanatcı):
 
     return liste_10
 
-@app.route("/tracks/rock")
-def rock():
-    sec_sanatcı = random.choice(genres["rock"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-@app.route("/tracks/alternative rock")
-def alternative_rock():
-    sec_sanatcı = random.choice(genres["alternative rock"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-
-@app.route("/tracks/pop")
-def pop():
-    sec_sanatcı = random.choice(genres["pop"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-
-@app.route("/tracks/blues")
-def blues():
-    sec_sanatcı = random.choice(genres["blues"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-
-@app.route("/tracks/country")
-def country():
-    sec_sanatcı = random.choice(genres["country"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-
-@app.route("/tracks/electronic")
-def electronic():
-    sec_sanatcı = random.choice(genres["electronic"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-
-@app.route("/tracks/jazz")
-def jazz():
-    sec_sanatcı = random.choice(genres["jazz"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-
-@app.route("/tracks/r&b")
-def rb():
-    sec_sanatcı = random.choice(genres["r&b"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-
-@app.route("/tracks/rap")
-def rap():
-    sec_sanatcı = random.choice(genres["rap"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-@app.route("/tracks/reggae")
-def reggae():
-    sec_sanatcı = random.choice(genres["reggae"])
-    return render_template("genre.html", variable=top_10(sec_sanatcı))
-
-@app.route('/tracks', methods=['GET', 'POST'])
+@app.route('/tracks')
 def server():
     return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/tracks/<string:genre>')
+def genre(genre):
+    sec_sanatcı = random.choice(genres[genre])
+    return render_template("genre.html", variable=top_10(sec_sanatcı))
+
+@app.route('/', )
 def redirect():
     return render_template('redirect.html')
 

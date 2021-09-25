@@ -29,12 +29,12 @@
         }
 
         td {
-            background-color: #E4F5D4;
+            background-color: #e7d6f7;
             border: 1px solid black;
         }
 
         th{
-            background-color: #E4F5D4;
+            background-color: #e7d6f7;
             font-weight: bold;
             border: 1px solid black;
             padding: 10px;
@@ -54,10 +54,10 @@
 </head>
 
 <body>
-
+    {{variable | length}}
     <section>
         <h1>TOP 10  SONGS</h1>
-
+        
         <table id='table'>
 
             <tr>
@@ -66,67 +66,17 @@
                 <th>Album İmage</th>
                 <th>preview url</th>
             </tr>
-
-            <tr>
-            <td> {{ variable[0]["artist"] }}</td>
-            <td>{{ variable[0]["song_name"] }}</td>
-            <td> <img src={{variable[0]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[0]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[1]["artist"] }}</td>
-            <td>{{ variable[1]["song_name"] }}</td>
-            <td> <img src={{variable[1]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[1]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[2]["artist"] }}</td>
-            <td>{{ variable[2]["song_name"] }}</td>
-            <td> <img src={{variable[2]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[2]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[3]["artist"] }}</td>
-            <td>{{ variable[3]["song_name"] }}</td>
-            <td> <img src={{variable[3]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[3]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[4]["artist"] }}</td>
-            <td>{{ variable[4]["song_name"] }}</td>
-            <td> <img src={{variable[4]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[4]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[5]["artist"] }}</td>
-            <td>{{ variable[5]["song_name"] }}</td>
-            <td> <img src={{variable[5]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[5]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[6]["artist"] }}</td>
-            <td>{{ variable[6]["song_name"] }}</td>
-            <td> <img src={{variable[6]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[6]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[7]["artist"] }}</td>
-            <td>{{ variable[7]["song_name"] }}</td>
-            <td> <img src={{variable[7]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[7]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[8]["artist"] }}</td>
-            <td>{{ variable[8]["song_name"] }}</td>
-            <td> <img src={{variable[8]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[8]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
-            <tr>
-            <td> {{ variable[9]["artist"] }}</td>
-            <td>{{ variable[9]["song_name"] }}</td>
-            <td> <img src={{variable[9]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-            <td> <a href= {{variable[9]["prewiev_url"]}}">Preview Song</a> </td>
-            </tr>
+            
+                {%for i in range(0, variable|length)  %}
+                <tr>
+                    <td> {{ variable[i]["artist"] }}</td>
+                    <td>{{ variable[i]["song_name"] }}</td>
+                    <td> <img src={{variable[i]["album_image_url"]}} style="width:100px;height:100px;" > </td>
+                    <td> <a href= {{variable[i]["prewiev_url"]}}">Preview Song</a> </td>
+                </tr>
+                {%endfor%}
+            
+            
     </section>
 </body>
 
