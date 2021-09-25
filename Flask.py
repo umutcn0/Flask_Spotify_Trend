@@ -92,6 +92,10 @@ def reggae():
 def server():
     return render_template('index.html')
 
+@app.route('/', methods=['GET', 'POST'])
+def redirect():
+    return render_template('redirect.html')
+
 
 
 if __name__ =="__main__":
