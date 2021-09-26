@@ -63,7 +63,7 @@
                 <th>Artist Name</th>
                 <th>Track Name</th>
                 <th>Album İmage</th>
-                <th>preview url</th>
+                <th>Preview Track</th>
             </tr>
             
                 {%for i in range(0, variable|length)  %}
@@ -71,7 +71,7 @@
                     <td> {{ variable[i]["artist"] }}</td>
                     <td>{{ variable[i]["song_name"] }}</td>
                     <td> <img src={{variable[i]["album_image_url"]}} style="width:100px;height:100px;" > </td>
-                    <td> <a href= {{variable[i]["prewiev_url"]}}">Preview Song</a> </td>
+                    <td> <a href= {{variable[i]["prewiev_url"]}}">Preview Track"</a> </td>
                 </tr>
                 {%endfor%}
             
