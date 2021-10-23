@@ -43,9 +43,6 @@ def genre(genre):
 @app.route('/', )
 def redirect():
     return render_template('redirect.html')
-
-
-
 if __name__ =="__main__":
 
     app.run(debug=True)
